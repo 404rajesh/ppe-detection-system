@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: ppe_db
+    environment:
+      POSTGRES_DB: ppe_detection
+      POSTGRES_USER: ppeadmin
+      POSTGRES_PASSWORD: ppe123secure
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ppeadmin -d ppe_detection"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ai-service:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ai
+    container_name: ppe_ai
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../ai-service/models:/app/models
+      - ../ai-service/snapshots:/app/snapshots
+    environment:
+      - MODEL_PATH=/app/models/ppe_best.pt
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: ppe_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=ppe_detection
+      - DB_USER=ppeadmin
+      - DB_PASSWORD=ppe123secure
+      - JWT_SECRET=ppe_super_secret_jwt_key_2024_do_not_share
+      - JWT_EXPIRES_IN=24h
+      - AI_SERVICE_URL=http://ai-service:8000
+      - NODE_ENV=production
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin123
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    container_name: ppe_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - ai-service
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

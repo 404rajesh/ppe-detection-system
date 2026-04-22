@@ -1,0 +1,14 @@
+**/node_modules
+**/venv
+**/__pycache__
+**/.git
+**/runs
+**/snapshots
+ai-service/dataset
+ai-service/dataset2
+ai-service/test_prediction*
+Construction-Site-Safety-1
+Construction-Site-Safety-30
+hard-hat-universe-1
+**/*.log
+**/.env

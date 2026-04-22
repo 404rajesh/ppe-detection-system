@@ -1,0 +1,39 @@
+# Python
+ai-service/venv/
+ai-service/__pycache__/
+ai-service/snapshots/
+ai-service/*.log
+ai-service/test_prediction*/
+ai-service/construction_demo*.mp4
+ai-service/demo_video.mp4
+
+# Dataset (too large for GitHub)
+ai-service/dataset/
+Construction-Site-Safety-1/
+Construction-Site-Safety-30/
+hard-hat-universe-1/
+/home/x/datasets/
+
+# Node
+backend/node_modules/
+frontend/node_modules/
+
+# Logs
+logs/
+*.log
+
+# Environment
+backend/.env
+.env
+
+# Build
+frontend/dist/
+
+# Runs (YOLO training outputs)
+runs/
+ai-service/models/ppe_model/
+ai-service/models/ppe_model_v2/
+ai-service/models/ppe_model_v3/
+
+# Misc
+.DS_Store
