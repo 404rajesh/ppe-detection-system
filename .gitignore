@@ -36,4 +36,5 @@ ai-service/models/ppe_model_v2/
 ai-service/models/ppe_model_v3/
 
 # Misc
-.DS_Store
+.DS_Storeai-service/final-dataset/
+yolov8n.pt
