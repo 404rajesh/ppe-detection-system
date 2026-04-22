@@ -13,7 +13,6 @@
 
 ## 🎯 Problem Statement
 
-<<<<<<< HEAD
 - Real-time PPE detection using YOLOv8
 - Detects: Helmet, Safety Vest, Gloves, Boots, Goggles
 - Live video feed with bounding boxes 
@@ -26,7 +25,6 @@
 - One-command startup
 =======
 Manual PPE monitoring in industrial environments is **inefficient, error-prone, and unscalable**. CCTV cameras exist but are passive — no one watches them in real time. Workers skip safety gear, accidents happen.
->>>>>>> 337b005 (Update README with professional documentation)
 
 **This system solves it by making CCTV intelligent.**
 
@@ -37,7 +35,6 @@ Manual PPE monitoring in industrial environments is **inefficient, error-prone, 
 | Feature | Description |
 |---|---|
 | 🤖 Real-time AI Detection | YOLOv8 detects PPE at 23ms per frame |
-| 🎨 Smart Bounding Boxes | Green = Safe, Red = Violation |
 | ⚠️ Risk Classification | SAFE / LOW / MEDIUM / HIGH |
 | 🔧 Configurable Rules | Toggle PPE requirements from dashboard |
 | 📊 Analytics Dashboard | 7-day compliance trends and charts |
@@ -66,25 +63,25 @@ Manual PPE monitoring in industrial environments is **inefficient, error-prone, 
 ## 🏗️ System Architecture
 
 ```
-┌─────────────────────────────────────────┐
+┌──────────────────────────────────────────┐
 │         React Dashboard (port 3000)      │
 │   Login │ Live Feed │ Analytics │ Cams   │
-└──────────────────┬──────────────────────┘
+└──────────────────┬───────────────────────┘
                    │ WebSocket + REST API
-┌──────────────────▼──────────────────────┐
+┌──────────────────▼───────────────────────┐
 │       Node.js + Express (port 5000)      │
 │   Auth │ Cameras │ Violations │ Stats    │
-└──────────────────┬──────────────────────┘
+└──────────────────┬───────────────────────┘
                    │ REST API
-┌──────────────────▼──────────────────────┐
+┌──────────────────▼───────────────────────┐
 │      FastAPI + Python (port 8000)        │
 │   YOLOv8 │ IoU Logic │ Risk Engine       │
-└──────────────────┬──────────────────────┘
+└──────────────────┬───────────────────────┘
                    │
-┌──────────────────▼──────────────────────┐
+┌──────────────────▼───────────────────────┐
 │         PostgreSQL (port 5432)           │
 │  Detections │ Violations │ PPE Rules     │
-└─────────────────────────────────────────┘
+└──────────────────────────────────────────┘
 ```
 
 ---
@@ -231,8 +228,7 @@ ppe-detection-system/
 
 ---
 
-<<<<<<< HEAD
-BTech Final Year Project — 2026
+B.Tech Final Year Major Project — 2026
 =======
 ## 📊 Database Schema
 
@@ -284,13 +280,5 @@ This project is licensed under the MIT License.
 
 <div align="center">
   <strong>Built with ❤️ for Industrial Safety</strong><br>
-  BTech Final Year Project — 2026
+  BTech Final Year Major Project — by Rajesh Kumar Jha
 </div>
-```
-
-Save, then push to GitHub:
-
-```bash
-cd ~/ppe-detection-system && git add README.md && git commit -m "Update README with professional documentation" && git push
-```
->>>>>>> 337b005 (Update README with professional documentation)
