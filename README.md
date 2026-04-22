@@ -10,7 +10,7 @@ A real-time AI-powered system that detects Personal Protective Equipment (PPE) c
 
 - Real-time PPE detection using YOLOv8
 - Detects: Helmet, Safety Vest, Gloves, Boots, Goggles
-- Live video feed with bounding boxes (Green = Safe, Red = Violation)
+- Live video feed with bounding boxes 
 - Risk level classification (SAFE / LOW / MEDIUM / HIGH)
 - Configurable PPE rules via dashboard toggles
 - Violation logging with timestamps and camera ID
