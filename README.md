@@ -56,7 +56,7 @@ Manual PPE monitoring in industrial environments is **inefficient, error-prone, 
 | 👢 Boots | 0.787 | ✅ |
 | 🥽 Goggles | 0.743 | ✅ |
 | 👤 Person | 0.880 | ✅ |
-| **Overall** | **0.555** | ✅ |
+| **Overall** | **0.808** | ✅ |
 
 ---
 
