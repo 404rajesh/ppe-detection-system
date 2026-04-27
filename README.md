@@ -23,7 +23,7 @@
 - JWT authenticated admin login
 - Multi-camera support
 - One-command startup
-=======
+  
 Manual PPE monitoring in industrial environments is **inefficient, error-prone, and unscalable**. CCTV cameras exist but are passive — no one watches them in real time. Workers skip safety gear, accidents happen.
 
 **This system solves it by making CCTV intelligent.**
